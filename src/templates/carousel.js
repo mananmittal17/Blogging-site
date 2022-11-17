@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+// import SwipeableViews from 'react-swipeable-views';
+// import { autoPlay } from 'react-swipeable-views-utils';
 import BlogPost from "./blogPosts";
 import { useTheme } from '@mui/material/styles';
 import { Box, MobileStepper, rgbToHex, Typography } from "@mui/material";
 import { getAllBlogs } from "../Axios/Api";
 import SnackbarPopUp from "../Common/snackbar";
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const Carousel = () => {
     const theme = useTheme();
@@ -83,20 +83,20 @@ return e
                 </div>
                 {blogData.length > 0 ?
                 <Box style={{ width: "50%", overflow: "hidden" }}>
-                    <AutoPlaySwipeableViews
+                    {/* <AutoPlaySwipeableViews
                         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                         index={activeStep}
                         onChangeIndex={handleStepChange}
                         enableMouseEvents
                         style={{ width: "25vw", overflowX: "none" }}
-                    >
+                    > */}
                         { blogData.map((step, index) => (
 
                             <BlogPost step={step} image = {images[1]}/>
 
                         ))}
 
-                    </AutoPlaySwipeableViews>
+                    {/* </AutoPlaySwipeableViews> */}
                 </Box> : ""}
             </Box>
             {openSnackBar &&
